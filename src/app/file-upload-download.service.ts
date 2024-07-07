@@ -14,12 +14,14 @@ export class FileUploadDownloadService {
     formData.append('file', file);
 return this.http.post(this.baseUrl + '/upload',formData);
   }
-
   getFiles(): Observable<any> {
-    return this.http.get(this.baseUrl +'/files');
+    return this.http.get(`${this.baseUrl}/files`);
   }
-
   getFile(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/files/${id}`, { responseType: 'blob' });
+  }
+
+  getFileUrl(id: number): string {
+    return `${this.baseUrl}/files/${id}`;
   }
 }

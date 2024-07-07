@@ -18,6 +18,9 @@
           <div *ngIf="file.file_name.endsWith('.jpg') || file.file_name.endsWith('.png') || file.file_name.endsWith('.jpeg')">
             <img [src]="getFileUrl(file.id)" alt="{{ file.file_name }}" style="max-width: 200px;">
           </div>
+          <div *ngIf="file.file_name.endsWith('.mp4')">
+            <video [src]="getFileUrl(file.id)" controls style="max-width: 400px;"></video>
+          </div>
         </li>
       </ul>
     </div>

@@ -39,7 +39,8 @@ this.fileService.uploadFile(file).subscribe(res=>{
     );
   }
 
+  
   getFileUrl(id: number): string {
-    return `${this.fileService.baseUrl}/files/${id}`;
+    return this.fileService.getFileUrl(id);
   }
 }
